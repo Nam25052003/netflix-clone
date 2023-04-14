@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,38 +22,52 @@
 <link rel="stylesheet" href="./css/editprofile.css">
 <body>
 	<div class="su container col-4">
-		<form action="" class="form">
-			<h4 class="mx-5 mt-5">Edit Profile</h4>
+		<form action="/asm/editprofile" class="form" method="post">
+			<h4 class="cl mx-5 mt-5">Edit Profile</h4>
+			<h5>
+				<mark>${message}</mark>
+			</h5>
 			<div class="form-outline mx-5 ">
 				<div class="form-floating">
-					<input type="" id="loginName" class="form-control"
-						placeholder="Username" /> <label class="form-label"
-						for="loginName">Username</label>
+					<input name="id" type="text" id="loginName" class="form-control "
+						placeholder="Username" value="${user.id}" disabled readonly" /> <label
+						class="form-label" for="loginName">Username</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
-						placeholder="Fullname" /> <label class="form-label"
+					<input name="fullname" type="text" id="form2Example2"
+						class="form-control" placeholder="Fullname"
+						value="${user.fullname }" /> <label class="form-label"
 						for="form2Example2">Fullname</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
-						placeholder="password" /> <label class="form-label"
-						for="form2Example2">Email</label>
+					<input name="email" type="text" id="form2Example2"
+						class="form-control" placeholder="password" value="${user.email }" />
+					<label class="form-label" for="form2Example2">Email</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
-						placeholder="password" /> <label class="form-label"
+					<input name="password" type="password" id="form2Example2"
+						class="form-control" placeholder="password"
+						value="${user.password }" /> <label class="form-label"
 						for="form2Example2">Password</label>
 				</div>
 			</div>
 			<div class="d-flex justify-content-center my-4">
 				<button class="btn btn-outline-darkbtn-lg  px-5" type="submit">Update</button>
+			</div>
+			<div class="cl d-flex justify-content-between mx-5">
+				<p>You Want To</p>
+				<c:if test="${user.admin == true}">
+					<a href="/asm/adminn">Back</a>
+				</c:if>
+				<c:if test="${user.admin == false}">
+					<a href="/asm/userr">Back</a>
+				</c:if>
 			</div>
 		</form>
 	</div>

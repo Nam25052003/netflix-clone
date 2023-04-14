@@ -21,32 +21,33 @@
 
 <body>
 	<div class="su container col-4">
-		<form action="" class="form">
-			<h4 class="mx-5 mt-5">Registration</h4>
+		<form action="/asm/signup" class="form" method="post">
+			<h4 class="cl mx-5 mt-5">Registration</h4>
+			<div><mark>${message}</mark></div> 
 			<div class="form-outline mx-5 ">
 				<div class="form-floating">
-					<input type="" id="loginName" class="form-control"
+					<input name="id" type="" id="loginName" class="form-control"
 						placeholder="Username" /> <label class="form-label"
 						for="loginName">Username</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
+					<input name="fullname" type="text" id="form2Example2" class="form-control"
 						placeholder="Fullname" /> <label class="form-label"
 						for="form2Example2">Fullname</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
+					<input name="email" type="text" id="form2Example2" class="form-control"
 						placeholder="password" /> <label class="form-label"
 						for="form2Example2">Email</label>
 				</div>
 			</div>
 			<div class="form-outline my-4 mx-5">
 				<div class="form-floating">
-					<input type="password" id="form2Example2" class="form-control"
+					<input name="password" type="password" id="form2Example2" class="form-control"
 						placeholder="password" /> <label class="form-label"
 						for="form2Example2">Password</label>
 				</div>
@@ -54,8 +55,10 @@
 			<div class="d-flex justify-content-center my-4">
 				<button class="btn btn-outline-darkbtn-lg  px-5" type="submit">SignUp</button>
 			</div>
-			 <p class="text-center">Already have an account? <a href="/asm/login">Sign in instead</a></p>
+			 <p class="cl text-center">Already have an account? <a href="/asm/login">SignIn</a></p>
 		</form>
 	</div>
+	<%-- <jsp:include page="content.jsp"></jsp:include>
+	<jsp:include page="/views/admin/footer.jsp"></jsp:include> --%>
 </body>
 </html>

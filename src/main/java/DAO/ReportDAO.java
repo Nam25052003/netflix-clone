@@ -63,4 +63,11 @@ public class ReportDAO extends DAO<Report, String> {
 		List<Report> list = query.getResultList();
 		return list;
 	}
+
+	public List<Object[]> callProcByVideoTitle(String id) {
+		StoredProcedureQuery query = em.createNamedStoredProcedureQuery("Report.favoritesUser");
+		query.setParameter("id", id);
+		List<Object[]> list = query.getResultList();
+		return list;
+	}
 }

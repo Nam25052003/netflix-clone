@@ -21,19 +21,19 @@
 <link rel="stylesheet" href="./css/login.css">
 <body>
 	<section>
-		<div class="container col-4">
-			<form action="" class="form">
-				<h4 class="mx-5 mt-5">Đăng Nhập</h4>
+		<div class="ss container col-4">
+			<form action="/asm/login" class="form" method="post">
+				<h4 class="cl mx-5 mt-5">Đăng Nhập</h4>
 				<div class="form-outline mx-5 ">
 					<div class="form-floating">
-						<input type="" id="loginName" class="form-control"
+						<input name="username" type="" id="loginName" class="form-control"
 							value="${username }" placeholder="Email or username" /> <label
 							class="form-label" for="loginName">Email or username</label>
 					</div>
 				</div>
 				<div class="form-outline my-4 mx-5">
 					<div class="form-floating">
-						<input type="password" id="form2Example2" class="form-control"
+						<input name="password" type="password" id="form2Example2" class="form-control"
 							value="${password }" placeholder="password" /> <label
 							class="form-label" for="form2Example2">password</label>
 					</div>
@@ -41,10 +41,10 @@
 				<div class="d-flex justify-content-between align-items-center mx-5">
 					<!-- Checkbox -->
 					<div class="form-check mb-0">
-						<input class="form-check-input me-2" type="checkbox" value=""
+						<input name="rememberme" class="form-check-input me-2" type="checkbox" value=""
 							id="form2Example3"
 							<c:if test="${rememberme == 'true' }">checked = "checked"</c:if> />
-						<label class="form-check-label" for="form2Example3">
+						<label class="cl form-check-label" for="form2Example3">
 							Remember me </label>
 					</div>
 					<a href="/asm/forgotpassword" >Forgot password?</a>
@@ -52,12 +52,14 @@
 				<div class="d-flex justify-content-center my-4">
 					<button class="btn btn-outline-darkbtn-lg  px-5" type="submit">Login</button>
 				</div>
-				<div class="d-flex justify-content-between mx-5">
+				<div class="cl d-flex justify-content-between mx-5">
 					<p>You don't have an account?</p>
-					<a href="/asm/register">Register</a>
+					<a href="/asm/signup">Register</a>
 				</div>
 			</form>
 		</div>
 	</section>
+	<%-- <jsp:include page="content.jsp"></jsp:include>
+	<jsp:include page="/views/admin/footer.jsp"></jsp:include> --%>
 </body>
 </html>

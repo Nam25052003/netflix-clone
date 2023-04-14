@@ -11,19 +11,13 @@ import javax.persistence.NamedStoredProcedureQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.StoredProcedureParameter;
 import javax.persistence.Table;
-@NamedQueries({
-	@NamedQuery(name="User.findAll", query="SELECT o FROM User o"),
-	@NamedQuery(name="User.findByRole", query = "SELECT o FROM User o WHERE o.admin=:role"),
-})
+
+@NamedQueries({ @NamedQuery(name = "User.findAll", query = "SELECT o FROM User o"),
+		@NamedQuery(name = "User.findByRole", query = "SELECT o FROM User o WHERE o.admin=:role"), })
 
 @NamedStoredProcedureQueries({
-		@NamedStoredProcedureQuery(
-			name="User.spFindByEmail",
-			procedureName = "sp_FindByEmail",
-			resultClasses = {User.class},
-			parameters = @StoredProcedureParameter(name="email", type = String.class)
-		)
-})
+		@NamedStoredProcedureQuery(name = "User.spFindByEmail", procedureName = "sp_FindByEmail", resultClasses = {
+				User.class }, parameters = @StoredProcedureParameter(name = "email", type = String.class)) })
 
 @Entity
 @Table(name = "Users")
@@ -35,6 +29,7 @@ public class User {
 	String fullname;
 	String email;
 	Boolean admin = false;
+	Boolean rememberme = true;
 	@OneToMany(mappedBy = "user")
 	List<Favorite> favorites;
 
@@ -42,13 +37,15 @@ public class User {
 		super();
 	}
 
-	public User(String id, String password, String fullname, String email, Boolean admin, List<Favorite> favorites) {
+	public User(String id, String password, String fullname, String email, Boolean admin, Boolean rememberme,
+			List<Favorite> favorites) {
 		super();
 		this.id = id;
 		this.password = password;
 		this.fullname = fullname;
 		this.email = email;
 		this.admin = admin;
+		this.rememberme = rememberme;
 		this.favorites = favorites;
 	}
 
@@ -90,6 +87,14 @@ public class User {
 
 	public void setAdmin(Boolean admin) {
 		this.admin = admin;
+	}
+
+	public Boolean getRememberme() {
+		return rememberme;
+	}
+
+	public void setRememberme(Boolean rememberme) {
+		this.rememberme = rememberme;
 	}
 
 	public List<Favorite> getFavorites() {

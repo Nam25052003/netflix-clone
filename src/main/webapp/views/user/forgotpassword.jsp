@@ -19,25 +19,29 @@
 <script src="./js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet" href="./css/forgotpass.css">
 <body>
-	<div class="forgot">
-		<form action="" class="">
-			<h4 class="modal-title">Quên Mật Khẩu</h4>
+	<div class="su">
+		<form action="" class="forgot">
+			<h4 class="cl modal-title">Quên Mật Khẩu</h4>
 			<div>
 				<div class="mb-3 ">
-					<label for="username" class="username form-label"> Tài Khoản: </label> <input
-						type="text" id="username" class="form-control"
+					<label for="username" class="cl username form-label"> Tài
+						Khoản: </label> <input type="text" id="username" class="form-control"
 						placeholder="Username">
 				</div>
 				<div class="mb-3 ">
-					<label for="email" class="email form-label"> Email: </label> <input
+					<label for="email" class="cl email form-label"> Email: </label> <input
 						type="text" id="email" class="form-control" placeholder="Email">
 				</div>
-				<div class="d-flex justify-content-end">
-					<button type="submit" class="btn">OK</button>
+				<div class="d-flex ">
+					<button type="submit" class="btn">confirm</button>
 				</div>
-				<p class="text-center">You Want to back? <a href="/asm/login">back sign in</a></p>
+				<p class="cl text-center">
+					You Want to back? <a href="/asm/login">back sign in</a>
+				</p>
 			</div>
 		</form>
 	</div>
+	<%-- <jsp:include page="content.jsp"></jsp:include>
+	<jsp:include page="/views/admin/footer.jsp"></jsp:include> --%>
 </body>
 </html>

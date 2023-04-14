@@ -1,9 +1,12 @@
 body {
-	background-color: lightblue;
+	background-image: url(intro.jpg);
+	object-fit: cover;
+	width: 100%;
+	z-index: 0;
 }
 
-.su{
-	margin-top: 4em ;
+.su {
+	margin: 6% auto;
 }
 
 .form {
@@ -13,7 +16,11 @@ body {
 	border-radius: 5px;
 	padding: 2%;
 	border-radius: 10px;
-	background-color: #ffffff;
+	background-color: #000000bf;
+}
+
+.cl {
+	color: #fff;
 }
 
 a {
@@ -25,10 +32,12 @@ a:hover {
 }
 
 .form button {
+	font-size: 18px;
+	letter-spacing: 5px;
 	width: 80%;
-	background-color:gray;
+	background-color: red;
 }
 
 .form button:hover {
-	background-color: red;
+	background-color: #a11313;
 }

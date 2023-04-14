@@ -136,4 +136,32 @@ public class VideoDAO extends DAO<Video, String> {
 		List<Video> list = query.getResultList();
 		return list;
 	}
+
+	public List<Video> sortsByViews() {
+		try {
+			em.getTransaction().begin();
+			String jpql = "select o from Video o where o.active=true order by o.views desc";
+			TypedQuery<Video> query = em.createQuery(jpql, Video.class);
+			List<Video> list = query.getResultList();
+			em.getTransaction().commit();
+			return list;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Video> videoActive() {
+		try {
+			em.getTransaction().begin();
+			String jpql = "select o from Video o where o.active=true order by newid()";
+			TypedQuery<Video> query = em.createQuery(jpql, Video.class);
+			List<Video> list = query.getResultList();
+			em.getTransaction().commit();
+			return list;
+		} catch (Exception e) {
+			em.getTransaction().rollback();
+			throw new RuntimeException(e);
+		}
+	}
 }

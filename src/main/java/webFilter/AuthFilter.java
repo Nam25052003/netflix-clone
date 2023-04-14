@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import entity.User;
 
-@WebFilter({ "/user/index", "/video/like/*", "/video/share/*", "/account/change-password", "/admin/*" })
+//@WebFilter({ "/userr", "/adminn", "/report", "/usermanager/index", "/usermanager/create", "/usermanager/update",
+//		"/usermanager/delete", "/usermanager/edit/*", "/videomanager", "/editprofile" })
 public class AuthFilter implements HttpFilter {
 	@Override
 	public void doFilter(HttpServletRequest req, HttpServletResponse resp, FilterChain chain)
@@ -27,7 +28,7 @@ public class AuthFilter implements HttpFilter {
 
 		if (!error.isEmpty()) {// truy cap kg hop le
 			req.getSession().setAttribute("securi", uri);
-			resp.sendRedirect("/lab7/login.jsp?error=" + resp.encodeURL(error));
+			resp.sendRedirect("/asm/login?error=" + resp.encodeURL(error));
 		} else {// truy cap hop le
 			chain.doFilter(req, resp);
 		}

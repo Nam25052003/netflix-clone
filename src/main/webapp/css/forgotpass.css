@@ -1,16 +1,29 @@
 body {
-	background-color: lightblue;
+	background-image: url(intro.jpg);
+	object-fit: cover;
+	width: 100%;
+	z-index: 0;
+}
+
+.su {
+	margin: 6% auto;
 }
 
 h4 {
 	text-align: center;
 }
-.username, .email{
-	padding-left: 10px
+
+input[type=text] {
+	width: 95%;
+	margin-left: 10px;
+}
+
+.username, .email {
+	padding-left: 10px;
 }
 
 .forgot {
-	background-color: #fff;
+	background-color: #000000bf;
 	border: 2px solid black;
 	max-width: 500px;
 	border-radius: 10px;
@@ -20,18 +33,23 @@ h4 {
 	margin: 2% auto;
 }
 
+.cl {
+	color: #fff;
+}
+
 .btn {
-	height: 30px;
-	width: 150px;
-	color: #ffffff;
-	font-weight: bold;
-	border: 1px solid #f2f2f2;
+	font-family: cursive;
+	font-size: 18px;
+	letter-spacing: 5px;
+	margin-top: 30px;
+	margin-left: 10px;
 	border-radius: 5px;
 	cursor: pointer;
-	background-color: #0080c0;
+	background-color: red;
 	border: 1px solid #f2f2f2;
+	width: 95%;
 }
 
 .btn:hover {
-	background-color: red;
+	background-color: #a11313;
 }
